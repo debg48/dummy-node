@@ -15,6 +15,6 @@ const myServer = http.createServer((req,res)=>{
             default : res.end("404");
         }
     });    
-})
+});
 
 myServer.listen(8000,() => console.log("Server Started"));
