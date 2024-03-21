@@ -1,0 +1,8 @@
+REST API -> JSON
+
+GET /users -> list all users
+GET /users/{id} -> get user with id
+POST /users -> create new user
+PATCH /users/{id} -> edit user with id
+DELETE /users/{id} -> delete user with id
+
