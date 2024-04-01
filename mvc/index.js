@@ -7,7 +7,7 @@ const userRouter = require("./routes/user");
 const {logReqRes} = require("./middlewares/");
 
 //connection
-connectMongoDb(" mongodb://127.0.0.1:27017/mvc_test");
+connectMongoDb("mongodb://127.0.0.1:27017/mvc_test").then(() => { console.log("MongoDB connection Successful!")});
 
 //middleware
 app.use(express.urlencoded({ extended:false }));

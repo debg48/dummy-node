@@ -37,7 +37,7 @@ async function handleCreateNewUser(req,res){
     const result = await User.create({
         firstName : body.first_name ,
         lastName: body.last_name ,
-        emai : body.email ,
+        email : body.email ,
         gender : body.gender ,
         jobTitle: body.job_title
     });
