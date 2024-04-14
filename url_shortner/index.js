@@ -5,8 +5,9 @@ const path = require("path");
 const URL = require("./models/url");
 const app = express();
 const PORT = 8001;
+require("dotenv").config();
 
-connectToMongoDB('mongodb://localhost:27017/short-url').then(()=>console.log("Mongodb Connected"));
+connectToMongoDB(process.env.MONGO_URL).then(()=>console.log("Mongodb Connected"));
 
 
 app.set("view engine","ejs");
@@ -16,7 +17,7 @@ app.use(express.json());
 
 app.get("/",async (req,res)=>{
     const allUrls = await URL.find({});
-    console.log(allUrls);
+    // console.log(allUrls);
     return res.render("home.ejs",{ urls : allUrls });
 });
 
