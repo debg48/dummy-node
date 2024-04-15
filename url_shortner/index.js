@@ -15,6 +15,7 @@ app.set("view engine","ejs");
 app.set("views", path.resolve("./views"));
 
 app.use(express.json());
+app.use(express.urlencoded({extended : false}));
 
 app.use("/url",urlRoute);
 app.use("/",staticRoute);
@@ -24,8 +25,6 @@ app.use("/",staticRoute);
 //     // console.log(allUrls);
 //     return res.render("home.ejs",{ urls : allUrls });
 // });
-
-
 
 app.get("/url/:shortId",async (req,res)=>{
     const shortId = req.params.shortId;
