@@ -20,12 +20,6 @@ app.use(express.urlencoded({extended : false}));
 app.use("/url",urlRoute);
 app.use("/",staticRoute);
 
-// app.get("/",async (req,res)=>{
-//     const allUrls = await URL.find({});
-//     // console.log(allUrls);
-//     return res.render("home.ejs",{ urls : allUrls });
-// });
-
 app.get("/url/:shortId",async (req,res)=>{
     const shortId = req.params.shortId;
     const entry = await URL.findOneAndUpdate({
