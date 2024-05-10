@@ -14,11 +14,15 @@ async function handleUserSignup(req,res){
 
 async function handleUserLogin(req,res){
     const {email,password}=req.body
-    const user = await User.findOne({email,password});
+    console.log(email);
+    console.log(password);
+    const user = await User.findOne({email, password});
     if(!user){
         return res.render('login',{
             error : "Invalid Username or Password"
+            
         });
+        
     }
     const sessionID = uuidv4();
     setUser(sessionID,user);
