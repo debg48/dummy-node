@@ -34,7 +34,6 @@ app.post('/upload', upload.single('profileImage'), (req, res) => {
     return res.redirect("/");
 });
 
-
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
